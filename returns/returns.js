@@ -21,3 +21,17 @@ exports.EmailvalidationErrors = async function(req, res, message) {
         console.log(err)
     }
 }
+
+//this function will return all validation errors responses
+exports.validationErrors = async function(req, res, message) {
+    try{
+        return res.status(400).json({
+            status: "failed",
+            data: {
+                message
+            }
+        })
+    }catch(err){
+        console.log(err)
+    }
+}
